@@ -1,11 +1,11 @@
-import '../styles/Navbar.css'
-import logo from '../assets/logo.png'
-import { useState } from 'react'; // For managing the toggle state
+import '../styles/Navbar.css';
+import logo from '../assets/logo.png';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-function Navbar(){
-    const [menuOpen, setMenuOpen] = useState(false); // State to control the menu visibility
+function Navbar() {
+    const [menuOpen, setMenuOpen] = useState(false);
 
-    // Toggle the menu when hamburger button is clicked
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
@@ -15,17 +15,17 @@ function Navbar(){
             <img className='logo' src={logo} alt='logo'></img>
             <nav className='nav'>
                 <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-                    <li><a href='../Home.jsx'>Home</a></li>
-                    <li><a href='#'>About Us</a></li>
-                    <li><a href='#'>Premium</a></li>
-                    <li><a href='#'>Contact</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About Us</Link></li>
+                    <li><Link to="/forcaster">Forcaster</Link></li>
+                    <li><Link to="/premium">Premium</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
                 </ul>
             </nav>
             <div className='srb'>
                 <button className='signin-btn'>Sign in</button>
                 <button className='register-btn'>Register</button>
             </div>
-            {/* Hamburger icon */}
             <div className='hamburger' onClick={toggleMenu}>
                 <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
                 <div className={`bar ${menuOpen ? 'open' : ''}`}></div>
