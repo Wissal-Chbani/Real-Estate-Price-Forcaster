@@ -1,8 +1,8 @@
+import ForcasterBody from '../components/ForcasterBody.jsx'
+
 function Forcaster() {
     return (
-      <div className="forcaster-root">
-        {/* Your forcaster content here */}
-      </div>
+      <ForcasterBody/>
     );
   }
   export default Forcaster;

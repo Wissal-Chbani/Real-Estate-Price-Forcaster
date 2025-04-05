@@ -1,4 +1,4 @@
-import '../styles/HomeBody.css'
+import '../styles/homebody.css'
 import map from '../assets/finalmap.png'
 import line from '../assets/line.png'  // Import the new line image
 
