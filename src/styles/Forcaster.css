@@ -59,6 +59,10 @@
   background-size: 16px;
 }
 
+.option {
+  background-color: #344CB7;
+}
+
 /* Checkbox group styling */
 .checkbox-group {
   display: flex;
@@ -115,18 +119,17 @@
 /* Map container styling */
 .maps-container {
   flex: 1;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: rgba(25, 76, 183, 0.21);
   border-radius: 10px;
   margin: 20px 20px 20px 0;
 }
 
 .map-title {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   font-size: 18px;
-  color: #2c3e50;
   text-align: center;
 }
 

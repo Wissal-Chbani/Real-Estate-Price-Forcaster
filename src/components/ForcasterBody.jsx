@@ -332,9 +332,9 @@ const RealEstateForm = () => {
                     style={{ height: '100%', width: '100%', borderRadius: '8px' }}
                 >
                     <TileLayer
-                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    />
+  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+/>
+
                     <ClickableMap
                         setCoordinates={updateCoordinates}
                         currentCoordinates={currentCoordinates}
