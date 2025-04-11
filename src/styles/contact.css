@@ -45,6 +45,8 @@
     color: white;
     margin-bottom: 1.5rem;
     position: relative;
+    margin-top: 0rem;
+    padding-top: 0rem;
   }
   
   .section-title::after {
@@ -190,6 +192,10 @@
     
     .contact-title {
       font-size: 2rem;
+    }
+
+    .contact-info-title {
+      margin-top: 5rem;
     }
     
     .section-title {

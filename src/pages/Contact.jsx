@@ -96,7 +96,7 @@ const Contact = () => {
 
         {/* Contact Info */}
         <div className="contact-info-container">
-          <h2 className="section-title">Contact Information</h2>
+          <h2 className="section-title contact-info-title">Contact Information</h2>
           
           <div className="contact-info-card">
             <div className="info-item">
