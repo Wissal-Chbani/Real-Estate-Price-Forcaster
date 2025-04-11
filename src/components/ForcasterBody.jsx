@@ -5,11 +5,29 @@ import 'leaflet/dist/leaflet.css';
 import '../styles/forcaster.css';
 
 // Composant pour gérer les clics sur la carte
-const ClickableMap = ({ setCoordinates, currentCoordinates }) => {
+const ClickableMap = ({ setCoordinates, currentCoordinates, setPostalCode }) => {
     useMapEvents({
-        click(e) {
+        async click(e) {
             const { lat, lng } = e.latlng;
-            setCoordinates({ latitude: lat.toFixed(6), longitude: lng.toFixed(6) });
+            const coords = { 
+                latitude: lat.toFixed(6), 
+                longitude: lng.toFixed(6) 
+            };
+            setCoordinates(coords);
+            
+            // Récupération du code postal via l'API Nominatim
+            try {
+                const response = await fetch(
+                    `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&addressdetails=1`
+                );
+                const data = await response.json();
+                const postalCode = data.address?.postcode;
+                if (postalCode) {
+                    setPostalCode(postalCode);
+                }
+            } catch (error) {
+                console.error("Erreur lors de la récupération du code postal:", error);
+            }
         },
     });
 
@@ -45,12 +63,13 @@ const RealEstateForm = () => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    const updateCoordinates = (coords) => {
+    const updateCoordinates = (coords, postalCode = null) => {
         setCurrentCoordinates(coords);
         setFormData(prev => ({
             ...prev,
             longitude: coords.longitude,
             latitude: coords.latitude,
+            ...(postalCode && { code_postal: postalCode })
         }));
     };
 
@@ -129,11 +148,6 @@ const RealEstateForm = () => {
                             onChange={handleChange}
                         />
                     </div>
-
-                    {/* [Conservez tous vos autres champs de formulaire existants...] */}
-                    {/* ... Vos autres champs de formulaire restent inchangés ... */}
-
-
 
                     <div className='feature'>
                         <label className='feature-name'>Postal Code</label>
@@ -295,13 +309,6 @@ const RealEstateForm = () => {
                     </div>
 
 
-
-
-
-
-
-                    {/*......................*/ }
-
                     <div style={{ display: 'flex', alignItems: 'center', marginTop: '20px' }}>
                         <button className="predict-btn" type="submit" disabled={isLoading}>
                             {isLoading ? 'Predicting...' : 'Predict Price'}
@@ -331,6 +338,7 @@ const RealEstateForm = () => {
                     <ClickableMap
                         setCoordinates={updateCoordinates}
                         currentCoordinates={currentCoordinates}
+                        setPostalCode={(code) => setFormData(prev => ({ ...prev, code_postal: code }))}
                     />
                 </MapContainer>
             </div>
