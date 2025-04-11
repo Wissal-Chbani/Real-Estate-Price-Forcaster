@@ -87,7 +87,6 @@
   .form-group input,
   .form-group select,
   .form-group textarea {
-    background-color: ; /* Add this line */
     padding: 0.8rem;
     border: 1px solid #e2e8f0;
     border-radius: 8px;

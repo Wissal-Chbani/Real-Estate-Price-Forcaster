@@ -1,13 +1,21 @@
 import '../styles/homebody.css'
 import map from '../assets/finalmap.png'
-import line from '../assets/line.png'  // Import the new line image
+import line from '../assets/line.png'
+import { useNavigate } from 'react-router-dom';
 
 function HomeBody (){
+    const navigate = useNavigate();
+
     return (
         <div className='container'>
             <div className="text-container">
-                <h1>Predict your property’s future value today!</h1>
-                <button className="forcast-button">Start Forecasting</button>
+                <h1>Predict your property's future value today!</h1>
+                <button 
+                    className="forcast-button"
+                    onClick={() => navigate('/Forcaster')}
+                >
+                    Start Forecasting
+                </button>
             </div>
             <div className='map-container'>
                 <img src={map} className='map-img' alt='Map'></img>

@@ -55,7 +55,7 @@ function AboutUs() {
       <section className="cta-section">
         <h2 className="section-title">Ready to Explore?</h2>
         <p>Experience the future of real estate forecasting today.</p>
-        <a href="/predict" className="cta-button">Try Our Predictor</a>
+        <a href="/Forcaster" className="cta-button">Try Our Predictor</a>
       </section>
     </div>
   );
