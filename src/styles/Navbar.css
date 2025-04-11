@@ -85,48 +85,6 @@ button {
   transition: all 0.3s ease 0s;
 }
 
-/* Mobile-friendly adjustments */
-/* @media (max-width: 820px) {
-    header {
-        justify-content: center;
-        padding: 20px 5%;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .nav-links li {
-        padding: 10px 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .srb {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 15px;
-    }
-
-    .signin-btn, .register-btn {
-        width: 100%;
-        padding: 12px 25px;
-        margin: 5px 0;
-    }
-
-    .register-btn {
-        background-color: #344CB7;
-    }
-} */
-
-
-
-
-
-
 /* Hamburger menu */
 .hamburger {
   display: none;
