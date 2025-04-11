@@ -3,6 +3,7 @@ import Home from './pages/Home.jsx';
 import Forcaster from './pages/Forcaster.jsx';
 import Navbar from './components/Navbar.jsx';
 import AboutUs from './pages/AboutUs.jsx';
+import Premium from './pages/Premium.jsx';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/forcaster" element={<Forcaster />} />
         <Route path='/aboutus' element={<AboutUs />} />
+        <Route path='/premium' element={<Premium />} />
       </Routes>
     </Router>
   );
